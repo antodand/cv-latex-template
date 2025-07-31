@@ -1,0 +1,37 @@
+\documentclass[11pt,a4paper]{article}
+
+% Import settings and packages
+\input{settings/packages}
+\input{settings/layout}
+\input{settings/commands}
+\input{settings/colors}
+\input{settings/fonts}
+
+\begin{document}
+
+% Background for left column
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[leftcolumnbg] (current page.north west) rectangle ([xshift=0.35\paperwidth]current page.south west);
+\end{tikzpicture}
+
+% Header
+\input{sections/header-picture}
+
+% Create two-column layout
+\begin{minipage}[t]{0.35\textwidth}
+    % Left column sections
+    \input{sections/contacts}
+    \input{sections/certifications}
+    \input{sections/technical-skills}
+    \input{sections/language-skills}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.62\textwidth}
+    % Right column sections
+    \vspace{-0.5cm} % To align first title with left sections
+    \input{sections/experience}
+    \input{sections/education}
+    \input{sections/volunteering}
+\end{minipage}
+
+\end{document}
