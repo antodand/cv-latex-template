@@ -1,0 +1,36 @@
+% Header
+
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,inner sep=0pt] at (current page.north west) {
+        \begin{minipage}{\paperwidth}
+            \vspace{1cm}
+            \hspace{0.5cm}
+            \begin{minipage}[t]{0.3\textwidth}
+                \centering
+                % Picture
+                \begin{tikzpicture}
+                    % Background and borders
+                    \node[
+                        rectangle,
+                        draw=darkblue,
+                        line width=2pt,
+                        fill=white,
+                        inner sep=3pt,
+                    ] {
+                    \includegraphics[width=3.5cm,height=3.5cm,keepaspectratio]{\photopath}
+                    };
+                \end{tikzpicture}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.6\textwidth}
+                \vspace{-3 cm} % Align text with respect to the picture
+                {\Huge\bfseries Name Surname}\\[0.3cm]
+                {\Large\color{textgray} Job title}\\[0.2cm]
+                {\normalsize\color{textgray} Subtitle}
+            \end{minipage}
+            \hspace{0cm}
+        \end{minipage}
+    };
+\end{tikzpicture}
+
+\vspace{3.5cm}
