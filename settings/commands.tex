@@ -1,0 +1,47 @@
+% Custom commands
+
+% Section header command for left column
+\newcommand{\leftsection}[1]{
+    \noindent\colorbox{sectionbg}{
+        \color{sectiontext}\makebox[0.75\textwidth][c]{\Large\bfseries #1}
+    }
+    \vspace{0.3cm}
+}
+
+% CV entry command for experience/education/projects
+\newcommand{\cventry}[4]{
+    \textbf{#1} \hfill \textcolor{textgray}{\small #2}\\
+    {\color{textgray}#3}\\
+    #4
+    \vspace{0.5cm}
+}
+
+% Skill item command
+\newcommand{\skillitem}[1]{
+    \item[\textcolor{accent}{\textbullet}] #1
+}
+
+% Contact item command
+\newcommand{\contactitem}[3]{
+    #1~\textbf{#2}\\
+    #3
+    \vspace{0.3cm}
+}
+
+% Certification item command
+\newcommand{\certificationsitem}[2]{
+    \textbf{#1}\\
+    #2
+    \vspace{0.3cm}
+}
+
+% Personal growth section with title and bullet points
+\newcommand{\growthsection}[1]{
+    \textbf{#1}
+    \vspace{0.2cm}
+}
+
+% Growth item command for bullet points under growth sections
+\newcommand{\growthitem}[1]{
+    \item[\textcolor{accent}{\textbullet}] #1
+}

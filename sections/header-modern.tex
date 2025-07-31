@@ -1,0 +1,18 @@
+% Header
+
+\begin{tikzpicture}[remember picture,overlay]
+    % Header background
+    \fill[headerbg] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
+
+    % Content
+    \node[anchor=north west,inner sep=0pt] at ([xshift=1cm,yshift=-1cm]current page.north west) {
+        \begin{minipage}{\paperwidth}
+            {\color{white}\Huge\bfseries Name Surname}\\[0.4cm]
+            {\color{white}\Large Job title}\\[0.2cm]
+            {\color{white}\normalsize Subtitle}
+        \end{minipage}
+    };
+    
+\end{tikzpicture}
+
+\vspace{3cm} % Space after header

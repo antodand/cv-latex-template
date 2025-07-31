@@ -1,0 +1,75 @@
+% Different header styles
+
+% Gradient header
+\newcommand{\headerGradient}{
+    \begin{tikzpicture}[remember picture,overlay]
+        % Gradient background
+        \shade[left color=darkblue, right color=accent] 
+            (current page.north west) rectangle ([yshift=-5cm]current page.north east);
+        
+        % Content
+        \node[anchor=north west,inner sep=0pt] at ([xshift=1cm,yshift=-1cm]current page.north west) {
+            \begin{minipage}{\paperwidth}
+                {\color{white}\Huge\bfseries Name Surname}\\[0.4cm]
+                {\color{white}\Large Job title}\\[0.2cm]
+                {\color{white}\normalsize Subtitle}
+            \end{minipage}
+        };
+    \end{tikzpicture}
+    \vspace{4.5cm}
+}
+
+% Geometric header
+\newcommand{\headerGeometric}{
+    \begin{tikzpicture}[remember picture,overlay]
+        % Background
+        \fill[headerbg] (current page.north west) rectangle ([yshift=-5cm]current page.north east);
+        
+        % Geometric pattern
+        \foreach \x in {0,1,...,40} {
+            \draw[white, opacity=0.1, line width=0.5pt] 
+                ([xshift=\x cm,yshift=0cm]current page.north west) -- 
+                ([xshift=\x cm,yshift=-5cm]current page.north west);
+        }
+        \foreach \y in {0,-0.5,...,-5} {
+            \draw[white, opacity=0.1, line width=0.5pt] 
+                ([xshift=0cm,yshift=\y cm]current page.north west) -- 
+                ([xshift=\paperwidth,yshift=\y cm]current page.north west);
+        }
+        
+        % Content overlay
+        \fill[headerbg, opacity=0.9] ([xshift=0.5cm,yshift=-0.5cm]current page.north west) 
+            rectangle ([xshift=12cm,yshift=-4.5cm]current page.north west);
+        
+        % Content
+        \node[anchor=north west,inner sep=0pt] at ([xshift=1cm,yshift=-1cm]current page.north west) {
+            \begin{minipage}{\paperwidth}
+                {\color{white}\Huge\bfseries Name Surname}\\[0.4cm]
+                {\color{white}\Large Job title}\\[0.2cm]
+                {\color{white}\normalsize Subtitle}
+            \end{minipage}
+        };
+    \end{tikzpicture}
+    \vspace{4.5cm}
+}
+
+% Minimal header
+\newcommand{\headerMinimal}{
+    \begin{tikzpicture}[remember picture,overlay]
+        % Thin colored line at top
+        \fill[accent] (current page.north west) rectangle ([yshift=-0.3cm]current page.north east);
+        
+        % Main content area with light background
+        \fill[lightgray] ([yshift=-0.3cm]current page.north west) rectangle ([yshift=-5cm]current page.north east);
+        
+        % Content
+        \node[anchor=north west,inner sep=0pt] at ([xshift=1cm,yshift=-1cm]current page.north west) {
+            \begin{minipage}{\paperwidth}
+                {\color{white}\Huge\bfseries Name Surname}\\[0.4cm]
+                {\color{white}\Large Job title}\\[0.2cm]
+                {\color{white}\normalsize Subtitle}
+            \end{minipage}
+        };
+    \end{tikzpicture}
+    \vspace{4.5cm}
+}
